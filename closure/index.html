@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <button id="mybtn" onclick="updateClick();">click me</button>
+    <script>
+      var count = 0;
+      function updateCounter() {
+        count++;
+        var btn = document.getElementById("mybtn");
+        btn.innerHTML = `Click me (${count})`;
+      }
+
+      function updateCount() {
+        let counter = 0;
+        return function () {
+          ++counter;
+          var btn = document.getElementById("mybtn");
+          btn.innerHTML = `Click me (${counter})`;
+        };
+      }
+
+      var updateClick = updateCount();
+    </script>
+  </body>
+</html>
